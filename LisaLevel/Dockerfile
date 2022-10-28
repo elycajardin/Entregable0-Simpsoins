@@ -1,6 +1,5 @@
 FROM python:latest
 RUN mkdir LisaLevel
-RUN mkdir LisaLevel/dict.csv
 COPY main.py ./LisaLevel
 COPY requirements.txt ./LisaLevel
 RUN pip install --upgrade pip

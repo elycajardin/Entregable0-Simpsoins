@@ -52,11 +52,11 @@ while True:
         w.writerow(datos)
 # crear y añadir conteos al diccionario
     word_count(datos["Frase"], counts)
-    with open("cuentas.csv", "w", newline='') as csvfile:
-        headerKey = ["Palabra", "Cuenta"]
+    with open("contadorPalabras.csv", "w", newline='') as csvfile:
+        headerKey = ["Palabra", "Conteo"]
         newVal = csv.DictWriter(csvfile, headerKey)
         newVal.writeheader()
         for newK in counts:
-            newVal.writerow({"Palabra": newK, "Cuenta": counts[newK]})
+            newVal.writerow({"Palabra": newK, "Conteo": counts[newK]})
 
     time.sleep(1)

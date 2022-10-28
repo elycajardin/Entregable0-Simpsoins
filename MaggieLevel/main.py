@@ -16,14 +16,14 @@ while True:
   #list.extend(datos.values())
   if autor == 'Lisa Simpson':
     my_dict = {'quote': frase_simpson, 'character':autor}
-    with open('/Users/elyca.jardin/Documents/GitHub/MaggieLevel/Lisa/Lisa.csv', 'a') as csvfile:
+    with open('MaggieLevel/Lisa/Lisa.csv', 'a') as csvfile:
       w = csv.DictWriter(csvfile, my_dict.keys())
 
       w.writerow(my_dict)
     
   elif autor == 'Homer Simpson':
     my_dict = {'quote': frase_simpson, 'character':autor}
-    with open('/Users/elyca.jardin/Documents/GitHub/MaggieLevel/Homer/Homer.csv', 'a') as csvfile:
+    with open('MaggieLevel/Homer/Homer.csv', 'a') as csvfile:
       w = csv.DictWriter(csvfile, my_dict.keys())
 
       w.writerow(my_dict)
@@ -31,8 +31,8 @@ while True:
   else:
       
     my_dict = {'quote': frase_simpson, 'character':autor}
-    with open('/Users/elyca.jardin/Documents/GitHub/MaggieLevel/General/General.csv', 'a') as csvfile:
+    with open('MaggieLevel/General/General.csv', 'a') as csvfile:
       w = csv.DictWriter(csvfile, my_dict.keys())
 
       w.writerow(my_dict)
-  time.sleep(30) 
+  time.sleep(1) 
