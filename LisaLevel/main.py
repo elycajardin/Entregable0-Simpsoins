@@ -50,7 +50,7 @@ while True:
     with open(filePath2, 'a', newline='') as f:
         w = csv.DictWriter(f, datos.keys())
         w.writerow(datos)
-# crear y añadir conteos al diccionario
+# crear y añadir conteos al contador de palabras
     word_count(datos["Frase"], counts)
     with open("LisaLevel/contadorPalabras.csv", "w", newline='') as csvfile:
         headerKey = ["Palabra", "Conteo"]
