@@ -35,4 +35,4 @@ while True:
       w = csv.DictWriter(csvfile, my_dict.keys())
 
       w.writerow(my_dict)
-  time.sleep(1) 
+  time.sleep(30) 

@@ -8,8 +8,8 @@ import string
 import os.path
 
 # Creación de carpeta "General"
-if not os.path.isdir("General/"):
-    os.mkdir("General/")
+if not os.path.isdir("LisaLevel/General/"):
+    os.mkdir("LisaLevel/General/")
 ## Quitar signos de punctuación
 dictPunct = str.maketrans("","", string.punctuation)
 del dictPunct[ord("'")]
@@ -33,14 +33,14 @@ while True:
 
     image = requests.get(data_JSON[0]["image"]).content
     fileName = datos["Autor"].translate(dictPunct).replace(" ", "_") + ".png"
-    directory = datos["Autor"].translate(dictPunct).replace(" ", "_")+"/"
+    directory = "LisaLevel/"+datos["Autor"].translate(dictPunct).replace(" ", "_")+"/"
     filePath = os.path.join(directory, fileName)
     if not os.path.isdir(directory):
         os.mkdir(directory)
     with open (filePath, "wb") as f:
         f.write(image)
 
-    pathGeneral = "General/general.csv"
+    pathGeneral = "LisaLevel/General/general.csv"
     with open(pathGeneral, 'a', newline='') as f:
         w = csv.DictWriter(f, datos.keys())
         w.writerow(datos)
@@ -52,11 +52,11 @@ while True:
         w.writerow(datos)
 # crear y añadir conteos al diccionario
     word_count(datos["Frase"], counts)
-    with open("contadorPalabras.csv", "w", newline='') as csvfile:
+    with open("LisaLevel/contadorPalabras.csv", "w", newline='') as csvfile:
         headerKey = ["Palabra", "Conteo"]
         newVal = csv.DictWriter(csvfile, headerKey)
         newVal.writeheader()
         for newK in counts:
             newVal.writerow({"Palabra": newK, "Conteo": counts[newK]})
 
-    time.sleep(1)
+    time.sleep(30)
